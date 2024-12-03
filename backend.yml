@@ -27,7 +27,7 @@ Resources:
             RuntimeEnvironmentVariables:
               - Name: DYNAMODB_TABLE_NAME
                 Value: !Ref RoomsTable
-              - Name: HOTEL_NAME
+              - Name: !Sub ${HotelName}-${Environment}
                 Value: !Ref HotelName
         AuthenticationConfiguration:
           AccessRoleArn: !GetAtt AppRunnerECRAccessRole.Arn
